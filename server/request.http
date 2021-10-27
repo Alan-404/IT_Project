@@ -1,0 +1,41 @@
+POST http://localhost:5000/user/insert
+Content-Type: application/json
+
+{
+    "firstName": "Nguyễn",
+    "middleName": "Đức",
+    "lastName":"Trí",
+    "bDate": "04-04-2001",
+    "phone":"093343",
+    "address": "34A",
+    "username": "alan",
+    "password":"123"
+}
+
+###
+POST http://localhost:5000/account/login
+Content-Type: application/json
+
+{
+    "username":"alan",
+    "password":"a"
+}
+
+####
+POST http://localhost:5000/account/changePassword
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2MTc4MTUwMDU4MDBhZTMwMWZhM2FjMjkiLCJpYXQiOjE2MzUyNjExNjR9.EJ33LzypQswbnHC4KI1KkBle0vqq4JAUIbgVJSqPh-k
+
+{
+    "oldPassword": "123d",
+    "newPassword": "ad"
+}
+
+###
+POST http://localhost:5000/artist/insert
+Content-Type: application/json
+
+{
+    "name": "Quân AP",
+    "image": "https://static.wikia.nocookie.net/vpop/images/5/50/Qu%C3%A2n_AP.jpg/revision/latest?cb=20210223093337"
+}
