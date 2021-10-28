@@ -1,5 +1,6 @@
 const userModel = require('../Models/UserModel');
 const AccountController = require('../Controllers/AccountController');
+const AccountModel = require('../Models/AccountModel');
 
 class UserController{
     //insert new user
@@ -30,6 +31,24 @@ class UserController{
         }
         catch(error){
             return res.json({success: false, message: error.message});
+        }
+    }
+
+
+    //modify information
+    async modifyInfo(req, res){
+        const {firstName, middleName, lastName, bDate, phone, address,email} = req.body;
+        
+        try{
+            const account = await AccountModel.findById(req.accountId);
+            if (!account)
+                return res.json({success: false, message: 'Invalid user'});
+            await userModel.findOneAndUpdate({_id:account.userId}, {firstName, middleName, lastName, bDate, phone, address, email});
+            return res.json({success: true, message: "Modify information user successfully"});
+
+        }
+        catch(error){
+            return res.json({success: false, message: error.message})
         }
     }
 }

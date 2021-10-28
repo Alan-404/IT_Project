@@ -6,9 +6,12 @@ const MusicVideoSchema = new Schema({
         type: String,
         required: true
     },
+    link: {
+        type: String,
+        required: true
+    },
     music: {
-        type: Schema.Types.ObjectId,
-        require: true
+        type: Schema.Types.ObjectId
     },
     description: {
         type: String

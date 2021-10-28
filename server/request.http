@@ -13,6 +13,20 @@ Content-Type: application/json
 }
 
 ###
+PUT http://localhost:5000/user/modify
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2MTc4MTUwMDU4MDBhZTMwMWZhM2FjMjkiLCJpYXQiOjE2MzU0MDk5NzZ9.GiDhtgYjfBZzvHdNd-qMrcJrD3V0M5UPqdqEomZVBHQ
+
+{
+    "firstName": "Nguyễn",
+    "middleName": "Đức",
+    "lastName":"Tris",
+    "bDate": "04-04-2001",
+    "phone":"093343656",
+    "address": "34A"
+}
+
+###
 POST http://localhost:5000/account/login
 Content-Type: application/json
 
@@ -38,4 +52,14 @@ Content-Type: application/json
 {
     "name": "Quân AP",
     "image": "https://static.wikia.nocookie.net/vpop/images/5/50/Qu%C3%A2n_AP.jpg/revision/latest?cb=20210223093337"
+}
+
+
+###
+POST http://localhost:5000/mv/insert
+Content-Type: application/json
+
+{
+    "name": "Nắm Đôi Bàn Tay",
+    "link":"https://www.youtube.com/watch?v=7nB1q65RP8w&list=RDZmX0EdWB1QI&index=27&ab_channel=KayTranOfficial"
 }
